@@ -1,16 +1,14 @@
 a {
-	color: #BA209B;
+	color: $accent;
 	text-decoration: none;
 	&:hover {
-		color: #D424B1;
+		color: $accent;
 	}
 }
 
 /* paragraphs */
 
-p {
-	line-height: 1.5;
-}
+
 
 /*blockquotes*/
 
@@ -49,7 +47,12 @@ dd {
 /*lists*/
 
 ul li, ol li {
-	padding: 3px;
+	padding: 0;
+	margin:0;
+}
+ul {
+	padding:0;
+	margin:0;
 }
 
 /*PRE*/
@@ -61,7 +64,28 @@ pre {
 	border: 1px solid #ccc;
 }
 
-
+h1{
+	font-family: $titlefont;
+	margin-bottom:0;
+}
+h2,h3,h4{
+	font-family: $titlefont2;
+	font-size:2.3rem;
+}
+p {
+	line-height: 1.5;
+	font-family: $bodyfont;
+	/*font-weight:300;*/
+}
+.small-text{
+	font-size:0.8rem;
+	color:rgba($lightgrey,0.7);
+}
+.btn___view{
+	text-transform: uppercase;
+	font-family: $titlefont2;
+	color:white;
+}
 /*
 ====================================
 Global Classes / Wordpress Specific
@@ -95,3 +119,4 @@ img {
 	float: left;
 	clear: both;
 }
+

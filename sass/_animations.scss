@@ -1,0 +1,39 @@
+@keyframes bouncing{
+0%{bottom:-55px}
+
+50%{bottom:-65px}
+
+100%{bottom:-55px}
+}
+
+.btn___view{
+  color:$white;
+  margin-right:25px;
+  font-size:0.9rem;
+  line-height:2rem;
+  transition:0.3s all ease;
+  position:relative;
+  &:first-child{
+    &:before{
+    content:"";
+    right:-15px;
+    height:17px;
+    top:0;
+    width:1px;
+    background:rgba($white,0.4);
+    position:absolute;
+    }
+  }
+}
+.btn___view---text{
+    font-size:1.2rem;
+    text-transform: uppercase;
+    font-family:$titlefont2;
+    padding-top:15px;
+    margin-bottom:0;
+    display:none;
+}
+.arrow-size{
+  font-size:1.5rem;
+  line-height:1.5rem;
+}

@@ -1,0 +1,36 @@
+
+@media all and (max-width:$tabletLandscape){
+    .wrapper{
+        width:95%;
+    }
+    main{
+        .inner-container{
+            padding:25px;
+            h3{
+                font-size:1.6rem;
+            }
+        }
+    }
+}
+@media all and (max-width:$tabletPortrait){
+    main{
+        .section___row{
+            display:block;
+            .half-container{
+                width:100%;
+                margin:15px 0;
+            }
+            .inner-container-2{
+                h2{
+                    font-size:1.6rem;
+                }
+                .btn___view---text{
+                    display:block;
+                }
+            }
+            .half-container:nth-child(2n - 1){
+                display:none;
+            }
+        }
+    }    
+}

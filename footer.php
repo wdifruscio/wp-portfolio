@@ -1,6 +1,7 @@
 <footer>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <p>&copy; willcodes. <?php echo date('Y'); ?></p>
+    <p class= "pull-right">Design Inspiration: <a href="http://www.remzag.com">REMZAG</a></p>
   </div>
 </footer>
 

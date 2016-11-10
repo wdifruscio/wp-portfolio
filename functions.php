@@ -281,3 +281,68 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+function prefix_send_email_to_admin() {
+// define variables and set to empty values
+$nameErr = $emailErr = $messageErr = "";
+$name = $email = $message = $phone = "";
+$errors = array();
+$save_values = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $message = test_input($_POST["message"]);
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+      array_push($errors, "Only letters and white space allowed"); 
+    }
+  }
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email - no robots in my inbox pls."; 
+      array_push($errors, "Invalid email - no robots in my inbox pls");
+    }
+  }
+  if (empty($_POST["message"])) {
+    $messageErr = "Valid text is required";
+    array_push($errors, "Valid text is required");
+  } else {
+    $message = test_input($_POST["message"]);
+    $phone = test_input($_POST["phone"]);
+  }
+}
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+if (isset($_REQUEST['submit'])) {
+  if (empty($errors)) { 
+  $from = "willcodes.ca"; //Site name
+  // Change this to your email address you want to form sent to
+  $to = "difruscio.dev@gmail.com"; 
+  $subject = "Message from " . $name . "";
+  $theMessage = "From: " . $name . "\nSenders Email: " . $email . "\nMessage: " . $message . "\nPhone:" . $phone;
+  mail($to,$subject,$theMessage);
+  $success = "Message Sent.";
+  }
+    if(mail($to, $subject, $theMessage)) {
+          $sent = true;
+          unset($name,$email,$message);
+    } else {
+          array_push($errors, "I'm sorry, your message failed to send. Please try again.");
+      }
+}
+
+}

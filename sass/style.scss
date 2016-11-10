@@ -1,32 +1,40 @@
 /*!
-* Theme Name: HackerYou Starter Theme
-* Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
-* Version: 1.0
-* Author: HackerYou
-* Author URI: http://hackeryou.com
+* Theme Name: Willcodes.
+* Theme URI: http://willcodes.ca;
+* Description: Theme For willcodes Portfolio
 */
-
+@import 'variables';
 @import 'normalize';
 @import 'typography';
+@import 'animations';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
+@import 'contact';
 @import 'footer';
 /*
 ====================================
 Default Styling
 ====================================
 */
-
 img {
 	max-width: 100%;
 }
 
 body {
-	color: #333;
+	color: #CCC;
+	background-image: url(images/black-bg.png);
+	background-color:$darkgrey;
+	background-size:cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	transition:0.3s all ease;
 }
-
+.light-bg{
+	background-image: url(images/white-bg.png);
+    background-color: rgba(0,0,0,0.1);
+    color: black;
+}
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -37,15 +45,328 @@ body {
 	width: 65%;
 	margin-right: 5%;
 }
+.wrapper{
+	width:90%;
+	margin:0 auto;
+}
 
 .full {
 	width: 100%;
 }
 
+.flex-wrapper{
+	display:flex;
+	flex-wrap:wrap;
+}
+	.social{
+		display:flex;
+		list-style: none;
+		position: relative;
+		a{
+			transition:0.3s all ease;
+			margin-right:20px;
+			color:white;
+			font-size:1.2rem;
+			position:relative;
+			bottom:0;
+			&:hover{
+				color:$accent;
+				bottom:5px;
+			}
+		}
+	}
 
 
 
 
+//profile container
+.half-container{
+	min-height:300px;
+	height:100vh;
+	width:50%;
+	flex:1 1 50%;
+	display:flex;
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.inner-container{
+		position:relative;
+		margin:auto;
+		padding:25px;
+	h1{
+		font-size:6rem;
+		margin-bottom:0;
+		margin:0;
+	}
+	h2{
+		font-size:1.2rem;
+		margin:0;
+		line-height: 1.2rem;
+		letter-spacing: 2px;
+		font-weight:300;
+	}
+	.arrow-down{
+		position:absolute;
+		width:35px;
+		right:50%;
+		bottom:-55px;
+		animation: bouncing 1.7s infinite;
+		transition:0.3s all ease;
+		&:hover{
+			transform: scale(1.3);
+		}
+	}
+	img{
+		width:100%;
+	}
+	i{
+		position:absolute;
+		bottom:3px;
+		font-size:1.5rem;
+		transition:0.3s all ease;
+		&:hover{
+			color:$accent;
+		}
+	}
+}
+//about
+.section___about{
+	background:$grey;
+	margin-bottom:25px;
+	opacity:0.9;
+}
+.about___container{
+	display:flex;
+	.image-container{
+		padding:2%;
+		width:30%;
+	}
+	.about___text{
+		padding:2%;
+		width:60%;
+		display:flex;
+		align-items:center;
+		h2{
+			position:relative;
+			&:before{
+				content: "";
+				width:50px;
+				height:2px;
+				background:$accent;
+				position:absolute;
+				left:0;
+				bottom:-10px;
+			}
+		}
+	}
+	img{
+		max-width: 100%;
+		filter:saturate(0.8) brightness(0.9);
+	}
+}
+//projects
+main{
+	.half-container{
+		background: $grey;
+		background-size:cover;
+		background-position:center;
+		height:70vh;
+		min-height:250px;
+	}
+	.half-container:nth-child(2n){
+		background-size:cover;
+		background-position:center;
+		/*background-clip:content-box;
+		border:25px solid transparent;*/
+	}
+	.inner-container{
+		padding:50px;
+	}
+	.inner-container-2{
+		max-width:80%;
+		text-align: center;
+		position:relative;
+		margin:auto;
+		padding:25px 45px;
+		color:black;
+		background:rgba($white,0.8);
+		position:relative;
+		transition:0.8s ease all;
+		h2,p{
+			margin:0;
+		}
+		div{
+			position:absolute;
+			background: transparent;
+		}
+		.left,.right{
+			height:100%;
+			width:0;
+			transition:0.4s all ease;
+		}
+		.left{
+			border-bottom:5px solid $accentFaded;
+			left:0;
+			top:0;
+		}
+		.right{
+			border-top:5px solid $accentFaded;
+			right:0;
+			bottom:0;
+		}
+		.up,.down{
+			height:0;
+			width:100%;
+			transition:0.2s all ease;
+		}
+		.up{
+			left:0;
+			top:0;
+			border-left:5px solid $accentFaded;
+		}
+		.down{
+			right:0;
+			bottom:0;
+			border-right:5px solid $accentFaded;
+		}
+		&:hover .left{
+			width:100%						
+		}
+		&:hover .right{
+			width:100%						
+		}
+		&:hover .up{
+			height:100%						
+		}	
+		&:hover .down{
+			height:100%						
+		}
+		&:hover{
+			background:$accentFaded;
+		}	
+	}
+	.section___row{
+		background-size:cover;
+		background-color:rgba(255,255,255,0.92);
+		background-attachment: fixed;
+	}
+	.section___row:nth-child(2n){
+		flex-direction: row-reverse;
+	}
+	h2{
+		text-transform: uppercase;
+	}
+	h3{
+		margin-bottom:30px;
+		position:relative;
+		&:before{
+			content: "";
+			width:50px;
+			height:2px;
+			background:$accent;
+			position:absolute;
+			left:0;
+			bottom:-15px;
+		}
+	}
+	.project___skills{
+		display:flex;
+		flex-wrap:wrap;
+		width:300px;
+		list-style: none;
+		margin:0;
+		padding:0;
+		margin-bottom:15px;
+		li{
+			color:black;
+			background:$white;
+			box-shadow:1px 1px $grey;
+			padding:5px 7px;
+			font-size:0.7rem;
+			margin:2px 2px;
+		}
+	}
+}
+//skills
+.section___skills{
+	text-align: center;
+	background: $grey;
+	margin:25px 0;
+	padding:30px 50px;
+	padding-top:10px;
+	h2{
+		padding:10px 0;
+		margin-bottom:50px;
+		font-size:2.2rem;
+		position:relative;
+		text-align: left;
+		&:before{
+			content: "";
+			width:50px;
+			height:2px;
+			background:$accent;
+			position:absolute;
+			bottom:-10px;
+		}
+	}
+	.skills___container{
+		display:flex;
+		flex-wrap: wrap;
+		align-items:center;
+		justify-content: flex-start;
+		figure{
+			height:64px;
+			margin-bottom:25px;
+			text-align: center;
+			margin-right:50px;
+			figcaption{
+				color:$white;
+				padding: 10px 0;
+			}
+			i{
+				font-size:4rem;
+			}
+		}
+	}
+}
+//contact
+
+.section___contact{
+	.half-container:first-child{
+		background: rgba($mediumgrey,0.8);
+	}
+}
+.contact___container{
+	h2{
+	position:relative;
+	&:before{
+		content: "";
+		width:50px;
+		height:2px;
+		background:$accent;
+		position:absolute;
+		left:0;
+		bottom:-15px;
+	}
+	}
+}
+//error msgs
+.error,.success{
+	color:red;
+	font-size:1.2rem;
+}
+.success{
+	color:green;
+}
+
+/*
+====================================
+MEDIA QUERIES
+====================================
+*/
+
+@import 'mediaqueries';
 
 
 

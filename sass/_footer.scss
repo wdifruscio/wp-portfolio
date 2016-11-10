@@ -1,3 +1,9 @@
 footer {
 	clear: both;
+	.container{
+		display:flex;
+	}
+	.pull-right{
+		margin-left:auto;
+	}
 }

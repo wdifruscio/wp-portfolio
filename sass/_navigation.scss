@@ -12,3 +12,111 @@ ul.menu {
 		}
 	}
 }
+
+//----- Demo defaults -----
+body {
+  background: #555;
+  height: 100%;
+}
+
+
+//----- Header styling -----
+// Change this to fit your needs
+// This example is assuming that you are using the hamburger menu button in the header
+
+.header___menu {
+  position: absolute;
+  top: 40px;
+  right: 7.5%;
+}
+
+//hamburger menu
+$hamburger__height: 25px;
+$hamburger__width: 30px;
+$hamburger__layer__height: 4px;
+$hamburger__colour: #FFF;
+
+// Structure
+.hamburger {
+  display: block;
+  position: fixed;
+  width: $hamburger__height;
+  height: $hamburger__width;
+  z-index: 2;
+}
+
+.hamburger___inner { 
+  display: block;
+  width: $hamburger__width;
+  height: $hamburger__layer__height; 
+  margin-top: $hamburger__layer__height * 2;
+  background: $hamburger__colour;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  
+  &::before, &::after { 
+    display: block; 
+    position: absolute; 
+    content: "";
+    z-index: -1;
+    width: $hamburger__width; 
+    height: $hamburger__layer__height; 
+    background: $hamburger__colour;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; 
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    top: $hamburger__layer__height * 4;
+  }
+}
+
+// Clicked State
+.hamburger--open {
+  .hamburger___inner {
+    background:none;
+
+    &::before, &::after {
+      top: $hamburger__layer__height * 2; 
+	  background:black;
+    }
+    &::before {
+      -webkit-transform: rotate(-45deg); 
+      -ms-transform: rotate(-45deg); 
+      transform: rotate(-45deg);
+    }
+    &::after {
+      -webkit-transform: rotate(45deg); 
+      -ms-transform: rotate(45deg); 
+      transform: rotate(45deg);
+    }
+  } 
+}
+
+nav{
+	display:none;
+	position:fixed;
+	height:100%;
+	width:100%;
+	ul{
+		margin:5% auto;
+		margin-top:10%;
+		list-style:none;
+		width:70%;
+		font-size:3rem;
+		li{
+			width:100%;
+		}
+		a{
+			font-family:$titlefont2;
+			color:black;
+			text-align:center;
+			font-weight:bolder;
+			padding:20px;
+			display:block;
+			text-transform: uppercase;
+		}
+	}
+}
