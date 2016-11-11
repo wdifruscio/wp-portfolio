@@ -2,10 +2,10 @@
 <body>
 <nav>
     <ul>
-        <li><a href="">About</a></li>
-        <li><a href="">Projects</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 <header class="flex-wrapper">
@@ -22,7 +22,7 @@
             <a href="#about" class=""><img class="header___title arrow-down" src="wp-content/themes/startertheme/images/arrow.png" alt=""></a>
         </div>
     </div>
-    <div class="half-container">
+    <div class="half-container div___placeholder">
     </div>
 </header>
 <main class="wrapper" id="about">
@@ -48,6 +48,7 @@
             </div>
         </div>
     </section>
+    <div id="projects"></div>
     <?php 
     $portfolioArgs = array(
         'post_type' => 'portfolio_items',
@@ -88,20 +89,20 @@
           <h2>Skills & Tools</h2>
           <div class="skills___container">
               <figure>
-                  <i class="devicon-html5-plain colored"></i>
-                  <figcaption>HTML</figcaption>
-              </figure>
-              <figure>
-                  <i class="devicon-css3-plain colored"></i>
-                  <figcaption>CSS</figcaption>
-              </figure>
-              <figure>
                   <i class="devicon-javascript-plain colored"></i>
                   <figcaption>JavaScript</figcaption>
               </figure>
               <figure>
                   <i class="devicon-jquery-plain colored"></i>
                   <figcaption>jQuery</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-html5-plain colored"></i>
+                  <figcaption>HTML</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-css3-plain colored"></i>
+                  <figcaption>CSS</figcaption>
               </figure>
               <figure>
                   <i class="devicon-sass-plain colored"></i>
@@ -140,41 +141,52 @@
               </figure>
           </div>
       </section>
-<section class="section___contact flex-wrapper" id="contact">
-    <div class="half-container">
-            <!-- validation -->
-          <?php if(count($errors)) { ?>
-          <div class="error">
-            <?php
-            echo implode("<br>", $errors);
-            ?>
-          </div>
-          <?php } else if ($sent) { ?>
-          <div class="success">Message sent! I'll be in touch :)</div>
-          <?php } ?>
-          <!-- end php  -->
-      <form name ="contactForm"  action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-        <input type="text" name="name" placeholder="Name" required maxlength="50" value="<?php echo $name;?>">      
-        <input type="email" name="email" placeholder="Email" required maxlength="50" value="<?php echo $email;?>">     
-        <input type="text" name="phone" placeholder="Phone Number" value="<?php echo $phone; ?>">       
-        <textarea rows="4" name="message" placeholder="Message" maxlength="500"><?php echo $message;?></textarea>
-        <input type="submit" name="submit" value="submit" class="submit-btn">
-      </form>
+    
+<!--<section class= "section___blog" id="blog">
+    <h2>Recent Posts</h2>
+    <div class="flex-wrapper">
+      <?php
+          $recentPosts = new WP_Query(array(
+              'posts_per_page' => 3,
+              'order' => 'DESC'
+              )
+      ); ?>
+      <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+    <div class="blog___container">
+        <h4><?php the_title(); ?></h4>
+        <?php $blogDate = get_the_date(); ?>
+        <p><span><?php echo $blogDate; ?></span></p>
+        <p><?php echo the_excerpt(20); ?></p>
     </div>
+    <?php endwhile; // end the loop?>
+    <?php wp_reset_query(); ?>
+    </div>
+</section>-->
+
+<section class="section___contact flex-wrapper" id="contact">
     <div class="half-container">
           <div class="contact___container">
             <h2>Get in touch</h2>
             <p>I love starting new projects and working with new people.
             Let's connect and build something new.</p>
           <ul class="social">
-              <li><a target="_blank" href="https://www.github.com/willcodes"><i class="fa fa-github"></i></a></li>
-              <li><a target="_blank" href="https://www.linkedin.com/in/willcodes"><i class="fa fa-linkedin"></i></a></li>
-              <li><a target="_blank" href="https://www.codepen.io/willcodes"><i class="fa fa-codepen"></i></a></li>
-              <li><a target="_blank" href="https://www.twitter.com/willcodes_"><i class="fa fa-twitter"></i></a></li>
-              <li><a target="_blank" href="mailto:hello@willcodes.ca"><i class="fa fa-envelope"></i></a></li>
+              <li><a target="_blank" href="<?php echo the_field('about-twitter'); ?>"><i class="fa fa-twitter"></i></a></li>
+              <li><a target="_blank" href="<?php echo the_field('about-linkedin'); ?>"><i class="fa fa-linkedin"></i></a></li>
+              <li><a target="_blank" href="<?php echo the_field('about-github'); ?>"><i class="fa fa-github"></i></a></li>
+              <li><a target="_blank" href="<?php echo the_field('about-codepen'); ?>"><i class="fa fa-codepen"></i></a></li>
+              <li><a target="_blank" href="malito:<?php echo the_field('about-email'); ?>"><i class="fa fa-envelope"></i></a></li>
           </ul>
           <p>// <span class="small-text">hello[at]willcodes.ca</span></p>                        
           </div>  
+    </div>
+    <div class="half-container">
+      <form name ="contactForm"  action="" method="post">
+        <input type="text" name="name" placeholder="Name" required maxlength="50" value="">      
+        <input type="email" name="email" placeholder="Email" required maxlength="50" value="">     
+        <input type="text" name="phone" placeholder="Phone Number" value="">       
+        <textarea rows="4" name="message" placeholder="Message" maxlength="500"></textarea>
+        <input type="submit" name="submit" value="submit" class="submit-btn">
+      </form>
     </div>
     </section>
 </main>

@@ -109,7 +109,8 @@ body {
 	.arrow-down{
 		position:absolute;
 		width:35px;
-		right:50%;
+		left:50%;
+		transform: translate(-50%);
 		bottom:-55px;
 		animation: bouncing 1.7s infinite;
 		transition:0.3s all ease;
@@ -272,8 +273,6 @@ main{
 	}
 	.project___skills{
 		display:flex;
-		flex-wrap:wrap;
-		width:300px;
 		list-style: none;
 		margin:0;
 		padding:0;
@@ -330,6 +329,41 @@ main{
 		}
 	}
 }
+
+//blog
+
+.section___blog{
+	background:$grey;
+	margin:25px 0;	
+	text-align:left;
+	padding:30px 50px;
+	padding-top:10px;
+	h2{
+		position:relative;
+		text-align: center;
+		&:before{
+		content: "";
+		width:50px;
+		height:2px;
+		background:$accent;
+		position:absolute;
+		left:50%;
+		transform: translateX(-50%);
+		bottom:-15px;
+		}
+	}
+	.blog___container{
+		width:46%;
+		margin:0 1%;
+		h4{
+			margin:0;
+			margin-top:20px;
+			font-size:1.8rem;
+		}
+	}
+}
+
+
 //contact
 
 .section___contact{

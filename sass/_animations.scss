@@ -37,3 +37,20 @@
   font-size:1.5rem;
   line-height:1.5rem;
 }
+
+.btn___more{
+  text-align: center;
+  margin:25px 0;
+  padding:1% 4%;
+  width:150px;
+  display:block;
+  text-transform: uppercase;
+  background:darken($accentFaded,10);
+  transition:0.3s all ease;
+  color:$white;
+  &:hover{
+    background:$white;
+    color:$accent;
+  }
+}
+
