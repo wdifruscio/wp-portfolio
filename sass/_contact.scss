@@ -13,12 +13,11 @@
 }
 //social btns
 form{
-    /*border:1px solid $white;*/
 	font-size:1.1rem;
 	text-align:left;
 	padding:20px;
-	width:85%;
-    height:85%;
+	width:99%;
+    height:90%;
 	margin:auto;
 	display:flex;
 	flex-wrap:wrap;
@@ -66,6 +65,15 @@ form{
 			border:3px inset $accent;
 		}
     }
+	p{
+		width:85%;
+		margin-top:0;
+		margin:5px auto;
+		margin-bottom:5px;
+		&:nth-child(2){
+			margin-top:25px;
+		}
+	}
 }
 .contact___container{
     width:85%;

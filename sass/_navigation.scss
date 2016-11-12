@@ -42,7 +42,7 @@ $hamburger__colour: #FFF;
   position: fixed;
   width: $hamburger__height;
   height: $hamburger__width;
-  z-index: 2;
+  z-index: 101;
 }
 
 .hamburger___inner { 
@@ -100,6 +100,8 @@ nav{
 	position:fixed;
 	height:100%;
 	width:100%;
+  z-index:100;
+  background:rgba(255,255,255,0.4);
 	ul{
 		margin:5% auto;
 		margin-top:10%;

@@ -66,13 +66,13 @@
                         <li><?php the_sub_field('single-skill'); ?></li>
                         <?php endwhile ?>
                     </ul>
-                <span><a class="btn___view" href="">View Live &nbsp➜</a>
-                <a class="btn___view" href="">Github  &nbsp➜</a></span>
+                <span><a class="btn___view" href="<?php echo the_field('item-url'); ?>">View Live &nbsp➜</a>
+                <a class="btn___view" href="<?php echo the_field('github-url'); ?>">Github  &nbsp➜</a></span>
             </div>
         </div>
         <?php $itemImage = get_field('item-image'); ?>
         <div class="half-container portfolio-box" style="background-image:url(<?php echo $itemImage['url']; ?>">
-            <a href="" class="inner-container-2">   
+            <a href="<?php echo the_field('item-url'); ?>" class="inner-container-2">   
                 <div class="left"></div>
                 <div class="right"></div>
                 <div class="up"></div>
@@ -133,11 +133,11 @@
               </figure>
               <figure>
                   <i class="devicon-nodejs-plain colored"></i>
-                  <figcaption>Nodejs</figcaption>
+                  <figcaption>Node</figcaption>
               </figure>
               <figure>
                   <i class="devicon-react-plain colored"></i>
-                  <figcaption>react</figcaption>
+                  <figcaption>React</figcaption>
               </figure>
           </div>
       </section>
@@ -180,13 +180,24 @@
           </div>  
     </div>
     <div class="half-container">
-      <form name ="contactForm"  action="" method="post">
+        <?php $contactForms = array(
+        'post_type' => 'contact_form',
+        );
+        $contactLoop = new WP_Query($contactForms);
+        if($contactLoop->have_posts()) while($contactLoop->have_posts()) : $contactLoop->the_post();
+        ?>
+        
+        <?php the_content(); ?>
+    <?php endwhile ?>
+    <?php wp_reset_postdata(); ?>
+        
+      <!--<form name ="contactForm"  action="" method="post">
         <input type="text" name="name" placeholder="Name" required maxlength="50" value="">      
         <input type="email" name="email" placeholder="Email" required maxlength="50" value="">     
         <input type="text" name="phone" placeholder="Phone Number" value="">       
         <textarea rows="4" name="message" placeholder="Message" maxlength="500"></textarea>
         <input type="submit" name="submit" value="submit" class="submit-btn">
-      </form>
+      </form>-->
     </div>
     </section>
 </main>
