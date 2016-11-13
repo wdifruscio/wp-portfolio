@@ -26,7 +26,8 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'blognav' => 'Blog Nav'
 	) );
 
 	/*
@@ -131,7 +132,7 @@ add_filter( 'wp_page_menu_args', 'hackeryou_page_menu_args' );
  * Sets the post excerpt length to 40 characters.
  */
 function hackeryou_excerpt_length( $length ) {
-	return 30;
+	return 50;
 }
 add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
 

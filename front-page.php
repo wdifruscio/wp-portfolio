@@ -1,5 +1,6 @@
 <?php get_header();  ?>
 <body>
+<div class="preloader"></div>
 <nav>
     <ul>
         <li><a href="#about">About</a></li>
@@ -9,7 +10,7 @@
     </ul>
 </nav>
 <header class="flex-wrapper">
-    <div class="header___menu">
+    <div class="header___menu" role="this is a menu icon displayed visually using CSS, it changes to an X and displays the nav when clicked">
         <a id="header___button" class="hamburger" href="#">
             <div class="hamburger___inner"></div>
         </a>  
@@ -19,7 +20,7 @@
         <div class="inner-container" style="color:<?php echo $headerColor ?>" >
             <h1 class="header___title"><?php the_field('header-title'); ?></h1>
             <h2 class="header___title"><?php the_field('header-tagline'); ?></h2>
-            <a href="#about" class=""><img class="header___title arrow-down" src="wp-content/themes/startertheme/images/arrow.png" alt=""></a>
+            <a href="#about" class=""><img class="header___title arrow-down" src="wp-content/themes/startertheme/images/arrow.png" alt="icon image of down facing arrow"></a>
         </div>
     </div>
     <div class="half-container div___placeholder">
@@ -30,7 +31,7 @@
     <section class="section___about">
         <div class="about___container">
             <div class="image-container">
-                <img src="<?php echo $profileImage['url'] ?>" alt="">
+                <img src="<?php echo $profileImage['url'] ?>" alt="Headshot picture of Will">
             </div>
             <div class="about___text">
                 <div>
@@ -50,11 +51,11 @@
     </section>
     <div id="projects"></div>
     <?php 
-    $portfolioArgs = array(
-        'post_type' => 'portfolio_items',
-    );
-    $portfolioLoop = new WP_Query($portfolioArgs);
-    if($portfolioLoop->have_posts()) while($portfolioLoop->have_posts()) : $portfolioLoop->the_post();
+        $portfolioArgs = array(
+            'post_type' => 'portfolio_items',
+        );
+        $portfolioLoop = new WP_Query($portfolioArgs);
+        if($portfolioLoop->have_posts()) while($portfolioLoop->have_posts()) : $portfolioLoop->the_post();
     ?>
     <section class="section___row flex-wrapper">
         <div class="half-container">
@@ -71,8 +72,8 @@
             </div>
         </div>
         <?php $itemImage = get_field('item-image'); ?>
-        <div class="half-container portfolio-box" style="background-image:url(<?php echo $itemImage['url']; ?>">
-            <a href="<?php echo the_field('item-url'); ?>" class="inner-container-2">   
+        <div class="half-container portfolio-box" style="background-image:url(<?php echo $itemImage['url']; ?>" role="<?php echo $itemImage['alt']; ?>">
+            <a href="<?php echo the_field('item-url'); ?>" class="inner-container-2" target="_blank">   
                 <div class="left"></div>
                 <div class="right"></div>
                 <div class="up"></div>
@@ -142,7 +143,7 @@
           </div>
       </section>
     
-<!--<section class= "section___blog" id="blog">
+<section class= "section___blog" id="blog">
     <h2>Recent Posts</h2>
     <div class="flex-wrapper">
       <?php
@@ -161,7 +162,7 @@
     <?php endwhile; // end the loop?>
     <?php wp_reset_query(); ?>
     </div>
-</section>-->
+</section>
 
 <section class="section___contact flex-wrapper" id="contact">
     <div class="half-container">
@@ -190,14 +191,6 @@
         <?php the_content(); ?>
     <?php endwhile ?>
     <?php wp_reset_postdata(); ?>
-        
-      <!--<form name ="contactForm"  action="" method="post">
-        <input type="text" name="name" placeholder="Name" required maxlength="50" value="">      
-        <input type="email" name="email" placeholder="Email" required maxlength="50" value="">     
-        <input type="text" name="phone" placeholder="Phone Number" value="">       
-        <textarea rows="4" name="message" placeholder="Message" maxlength="500"></textarea>
-        <input type="submit" name="submit" value="submit" class="submit-btn">
-      </form>-->
     </div>
     </section>
 </main>

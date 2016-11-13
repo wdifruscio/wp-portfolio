@@ -1,0 +1,111 @@
+.blog___wrapper{
+    width:80%;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.blog___header {
+    padding:5px;
+    margin-bottom:25px;
+    h1{
+        font-size:3rem;
+    }
+    .entry-meta{
+        padding:25px 0; 
+        padding-top:0;
+        border-bottom:3px solid $accent;
+    }
+}
+.entry-meta{
+    ul{
+        list-style: none;
+    }
+    li{
+        display:inline-block;
+        &:first-child{
+            position:relative;
+            margin-right:20px;
+            &:after{
+                content: "";
+                position:absolute;
+                top:2px;
+                right: -12.5px;
+                height:16px;
+                width:1px;
+                background:$lightgrey;
+            }
+        }
+    }
+    a{
+        display:block;
+        color:white;
+        text-decoration: underline;
+    }
+}
+
+.blog___content{
+    padding:50px;
+    padding-top:25px;
+    background:darken(white,5);
+    color:black;
+    .entry-meta{
+        margin-bottom:25px;
+    }
+    h1{
+        font-size:2.4rem;
+        margin:10px 0;
+        font-family:$titlefont2;    
+    }
+    .entry-content{
+        p{
+            line-height:1.6rem;
+        }
+    }
+    form{
+        textarea,input{
+            border:2px solid $grey;
+            &:hover{
+                border:2px solid $accent;
+            }
+        }
+        input[type="submit"]{
+            padding:10px 15px;
+            margin-top:25px;
+            &:hover{
+                border:2px solid $accent;
+            }
+        }
+    }
+    #respond input{
+        margin-top:15px;
+    }
+}
+
+pre{
+    background:black;
+    color:white;
+}
+
+.blog___posts{
+    margin:25px auto;
+    background:$white;
+    color:black;
+    padding:25px;
+    .btn___more{
+        width:20%;
+    }
+    .blog--comments{
+        color:$grey;
+        font-size:1rem;
+        font-style: italic;
+        text-decoration: underline;
+    }
+}
+@media all and (max-width:$tabletPortrait){
+    .blog___wrapper{
+        width:95%;
+    }
+    .blog___content{
+        padding:15px;
+    }
+}

@@ -1,4 +1,10 @@
-$(window).on('load', function(){
+$(window).load(function() {
+	var img = new Image();
+	img.src = "wp-content/themes/startertheme/images/white-bg.png";
+   $('.preloader').fadeOut('slow');
+});
+
+$(document).ready(function(){
 	$("#header___button").click(function(e) {
 		e.preventDefault();
 		$(this).toggleClass("hamburger--open");
