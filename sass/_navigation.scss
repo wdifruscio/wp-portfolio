@@ -34,7 +34,7 @@ body {
 $hamburger__height: 25px;
 $hamburger__width: 30px;
 $hamburger__layer__height: 4px;
-$hamburger__colour: #FFF;
+$hamburger__colour: $white;
 
 // Structure
 .hamburger {
@@ -104,9 +104,8 @@ nav{
   background:rgba(255,255,255,0.4);
 	ul{
 		margin:5% auto;
-		margin-top:10%;
 		list-style:none;
-		width:70%;
+		width:100%;
 		font-size:3rem;
 		li{
 			width:100%;

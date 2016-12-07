@@ -6,6 +6,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -67,8 +68,8 @@
                         <li><?php the_sub_field('single-skill'); ?></li>
                         <?php endwhile ?>
                     </ul>
-                <span><a class="btn___view" href="<?php echo the_field('item-url'); ?>">View Live &nbsp➜</a>
-                <a class="btn___view" href="<?php echo the_field('github-url'); ?>">Github  &nbsp➜</a></span>
+                <span><a class="btn___view" target="_blank" href="<?php echo the_field('item-url'); ?>">View Live &nbsp➜</a>
+                <a class="btn___view" target="_blank" href="<?php echo the_field('github-url'); ?>">Github  &nbsp➜</a></span>
             </div>
         </div>
         <?php $itemImage = get_field('item-image'); ?>

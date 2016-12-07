@@ -46,25 +46,22 @@ form{
 		border-bottom: 2px solid $accent;
 	}
 	.submit-btn{
-		margin:0 auto;
-        margin-left:0;
-		margin-top:15px;
+		text-align: center;
+		margin:25px 0;
+		padding:1% 4%;
 		width:150px;
-		border:2px solid darken($white,30);
-		padding:1% 2%;
-		font-family:$titlefont2;
-        text-transform: uppercase;
-        color:darken($white,30);
-        font-size:1.3rem;
+		display:block;
+		text-transform: uppercase;
+		background:darken($accentFaded,10);
+		transition:0.3s all ease;
+		color:$white;
+		border-bottom:2px solid transparent;
 		&:hover{
-			background:$accent;
-			border:2px solid $accent;
-			color:$white;
+			background:$white;
+			color:$accent;
+			border-bottom:2px solid transparent;
 		}
-		&:active{
-			border:3px inset $accent;
-		}
-    }
+	}
 	p{
 		width:85%;
 		margin-top:0;

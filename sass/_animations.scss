@@ -8,12 +8,18 @@
 
 .btn___view{
   color:$white;
-  margin-right:25px;
+  margin-right:15px;
   font-size:0.9rem;
   line-height:2rem;
   transition:0.3s all ease;
   position:relative;
-  &:first-child{
+  background:$accentFaded;
+  padding:10px 15px;
+  &:hover{
+    background:$white;
+    color:$accent;
+  }
+  /*&:first-child{
     &:before{
     content:"";
     right:-15px;
@@ -23,7 +29,7 @@
     background:rgba($white,0.4);
     position:absolute;
     }
-  }
+  }*/
 }
 .btn___view---text{
     font-size:1.2rem;
@@ -55,3 +61,7 @@
   }
 }
 
+.portfolio-link{
+  font-style: italic;
+  text-decoration:underline;
+}
