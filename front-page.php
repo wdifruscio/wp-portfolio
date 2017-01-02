@@ -91,14 +91,6 @@
           <h2>Skills & Tools</h2>
           <div class="skills___container">
               <figure>
-                  <i class="devicon-javascript-plain colored"></i>
-                  <figcaption>JavaScript</figcaption>
-              </figure>
-              <figure>
-                  <i class="devicon-jquery-plain colored"></i>
-                  <figcaption>jQuery</figcaption>
-              </figure>
-              <figure>
                   <i class="devicon-html5-plain colored"></i>
                   <figcaption>HTML</figcaption>
               </figure>
@@ -111,6 +103,30 @@
                   <figcaption>Sass</figcaption>
               </figure>
               <figure>
+                  <i class="devicon-javascript-plain colored"></i>
+                  <figcaption>JavaScript</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-jquery-plain colored"></i>
+                  <figcaption>jQuery</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-nodejs-plain colored"></i>
+                  <figcaption>Node</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-php-plain colored"></i>
+                  <figcaption>PHP</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-symfony-original colored"></i>
+                  <figcaption>Symfony</figcaption>
+              </figure>
+              <figure>
+                  <i class="devicon-wordpress-plain colored"></i>
+                  <figcaption>WordPress</figcaption>
+              </figure>
+              <figure>
                   <i class="devicon-git-plain colored"></i>
                   <figcaption>Git</figcaption>
               </figure>
@@ -119,12 +135,12 @@
                   <figcaption>Github</figcaption>
               </figure>
               <figure>
-                  <i class="devicon-gulp-plain colored"></i>
-                  <figcaption>Gulp</figcaption>
+                  <i class="devicon-bitbucket-plain colored"></i>
+                  <figcaption>Bitbucket</figcaption>
               </figure>
               <figure>
-                  <i class="devicon-wordpress-plain colored"></i>
-                  <figcaption>WordPress</figcaption>
+                  <i class="devicon-gulp-plain colored"></i>
+                  <figcaption>Gulp</figcaption>
               </figure>
           </div>
           <h2>Currently Exploring</h2>
@@ -134,12 +150,8 @@
                   <figcaption>C#</figcaption>
               </figure>
               <figure>
-                  <i class="devicon-nodejs-plain colored"></i>
-                  <figcaption>Node</figcaption>
-              </figure>
-              <figure>
-                  <i class="devicon-react-plain colored"></i>
-                  <figcaption>React</figcaption>
+                  <i class="devicon-angularjs-plain colored"></i>
+                  <figcaption>Angular</figcaption>
               </figure>
           </div>
       </section>

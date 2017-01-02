@@ -9,6 +9,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		$(this).toggleClass("hamburger--open");
 		$('nav').toggleClass("light-bg");
+		$('body').toggleClass('adjust-margin');
 		$('.header___title').fadeToggle('fast');
 		$("nav").fadeToggle('fast');
 	});
@@ -17,6 +18,7 @@ $(document).ready(function(){
 			$('#header___button').toggleClass("hamburger--open");
 			$('.header___title').fadeToggle('fast');
 			$('nav').toggleClass("light-bg");
+			$('body').toggleClass('adjust-margin');
 		});
 	});
 		$('a[href*="#"]:not([href="#"])').click(function() {
